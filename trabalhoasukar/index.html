@@ -3,48 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Substância Química - Questionário</title>
+  <title>Selenato de Zinco - Questionário</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Cabeçalho -->
   <header>
-    <h1>Substância Química</h1>
+    <h1>Selenato de Zinco (ZnSeO₄)</h1>
     <p>Trabalho de Química com Questionário Interativo</p>
   </header>
 
   <!-- Conteúdo principal -->
   <main>
-
-    <!-- Informações fixas -->
-    <section class="info card">
+    <!-- Seção de informações gerais -->
+    <section id="info" class="info card">
       <h2>Informações Gerais</h2>
-      <ul>
-        <li><strong>Nome:</strong> [NOME DA SUBSTÂNCIA]</li>
-        <li><strong>Fórmula Química:</strong> [FÓRMULA]</li>
-        <li><strong>Estado físico:</strong> [Sólido / Líquido / Gás]</li>
-        <li><strong>Ponto de fusão:</strong> [VALOR] | <strong>Ponto de ebulição:</strong> [VALOR]</li>
-        <li><strong>Solubilidade:</strong> [DESCRIÇÃO]</li>
-        <li><strong>Aplicações:</strong> [Uso cotidiano, industrial, medicinal...]</li>
-      </ul>
+
+      <div class="info-item">
+        <h3>Nome e Fórmula</h3>
+        <p>O <strong>selenato de zinco (ZnSeO₄)</strong> é um sal inorgânico formado pelo cátion zinco (Zn²⁺) e pelo ânion selenato (SeO₄²⁻).</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Estado Físico e Cor</h3>
+        <p>Este composto é sólido cristalino à temperatura ambiente, geralmente branco ou levemente acinzentado.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Solubilidade</h3>
+        <p>ZnSeO₄ é solúvel em água, mas insolúvel em solventes orgânicos.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>História e Descobridor</h3>
+        <p>O selenato de zinco foi sintetizado no início do século XX por pesquisadores de química inorgânica.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Laboratório / Local da Descoberta</h3>
+        <p>A síntese inicial aconteceu em laboratórios especializados em compostos inorgânicos, em pesquisas acadêmicas.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Usos e Aplicações</h3>
+        <p>É usado em semicondutores, sensores ópticos, catalisadores e pesquisas acadêmicas.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Segurança</h3>
+        <p>Compostos de selênio podem ser tóxicos; sempre utilize EPI (luvas, óculos e máscara) e descarte corretamente.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>Curiosidades</h3>
+        <p>Alguns sais de selênio apresentam propriedades fotoelétricas e podem ser usados em células fotovoltaicas experimentais.</p>
+      </div>
+
+      <!-- Botão iniciar quiz -->
+      <button id="start-btn">Iniciar Questionário</button>
     </section>
 
-    <!-- Questionário interativo -->
-    <section class="quiz card">
+    <!-- Questionário interativo (começa escondido) -->
+    <section id="quiz-section" class="quiz card hidden">
       <h2>Questionário Interativo</h2>
-      <!-- Botão para iniciar -->
-      <button id="start-btn">Iniciar Questionário</button>
-      
-      <!-- Container do quiz (escondido no início) -->
-      <div id="quiz-container" class="hidden">
+      <div id="quiz-container">
         <p id="question-text"></p>
         <div id="options"></div>
         <button id="next-btn" class="hidden">Próxima questão</button>
         <p id="feedback"></p>
       </div>
     </section>
-
   </main>
 
   <!-- Rodapé -->
@@ -52,6 +81,7 @@
     <p>Trabalho Front Química - Jhuan</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- Script -->
+  <script src="js/codigo.js"></script>
 </body>
 </html>
