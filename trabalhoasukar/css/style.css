@@ -3,163 +3,221 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f0f7fa; /* azul bem claro */
+    background-color: #f0f7fa;
     color: #333;
     line-height: 1.6;
-  }
-  
-  /* Cabeçalho */
-  header {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
     background: linear-gradient(135deg, #0077b6, #009688);
     color: white;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-  
-  header h1 {
+}
+
+header h1 {
     margin-bottom: 8px;
     font-size: 2rem;
-  }
-  
-  header p {
+}
+
+header p {
     font-size: 1rem;
     opacity: 0.9;
-  }
-  
-  /* Conteúdo principal */
-  main {
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
     max-width: 900px;
     margin: 25px auto;
     padding: 0 15px;
-  }
-  
-  /* Seções em "cards" */
-  .card {
+}
+
+/* Seções em "cards" */
+.card {
     background: white;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  h2 {
+}
+
+h2 {
     margin-bottom: 15px;
     color: #00796b;
     border-left: 5px solid #0077b6;
     padding-left: 10px;
-  }
-  
-  /* Lista de informações */
-  .info ul {
-    list-style: none;
-  }
-  
-  .info li {
-    margin: 8px 0;
-  }
-  
-  /* Quiz */
-  #quiz-container {
+}
+
+/* Itens da seção de informações */
+.info-item {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.info-item h3 {
+    margin-bottom: 8px;
+    color: #00796b;
+}
+
+.info-item p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Botão "Iniciar Questionário" */
+#start-btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #009688, #00796b);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #00bfa5, #009688);
+}
+
+/* Quiz */
+#quiz-container {
     text-align: left;
-  }
-  
-  #question-text {
+}
+
+#question-text {
     font-weight: bold;
     margin-bottom: 15px;
     font-size: 1.1rem;
-  }
-  
-  #options button {
+}
+
+/* Botões do quiz (opções) */
+#options button {
     display: block;
     margin: 8px 0;
     padding: 12px;
     width: 100%;
-    border: 1px solid #0077b6;
-    border-radius: 6px;
-    background: #e0f7fa;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #00bfa5, #009688);
+    color: white;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: bold;
     transition: 0.3s;
-  }
-  
-  #options button:hover {
-    background: #b2ebf2;
-    transform: translateX(4px);
-  }
-  
-  /* Botão próxima */
-  #next-btn {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#options button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #00e0c6, #00bfa5);
+}
+
+/* Botão "Próxima questão" */
+#next-btn {
     margin-top: 15px;
-    padding: 10px 18px;
-    background: #009688;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #009688, #00796b);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.3s;
-  }
-  
-  #next-btn:hover {
-    background: #00796b;
-  }
-  
-  #next-btn.hidden {
-    display: none;
-  }
-  
-  /* Feedback */
-  #feedback {
-    margin-top: 12px;
     font-weight: bold;
-    color: #00695c;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-  }
-  
-  #feedback.show {
-    opacity: 1;
-  }
-  
-  /* Rodapé */
-  footer {
-    background: #004d40;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #00bfa5, #009688);
+}
+
+#next-btn.hidden {
+    display: none;
+}
+
+/* Feedback */
+#feedback {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#feedback.correct {
+    color: #388e3c;
+}
+
+#feedback.incorrect {
+    color: #d32f2f;
+}
+
+/* Ocultamento de seções */
+.hidden {
+    display: none !important;
+}
+
+/* Footer */
+footer {
+    background: #0077b6;
     color: white;
     text-align: center;
-    padding: 18px;
-    margin-top: 30px;
-    font-size: 0.9rem;
-  }
-  
-  /* Animações */
-  @keyframes fadeIn {
+    padding: 15px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+
+/* Animação fadeIn */
+@keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  #start-btn {
-    padding: 12px 20px;
-    background: linear-gradient(135deg, #007acc, #00b386);
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    transition: transform 0.2s ease, background 0.3s ease;
-  }
-  
-  #start-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #005fa3, #009966);
-  }
-  
-  .hidden {
-    display: none;
-  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    main {
+        margin: 15px;
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #options button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    #next-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    #start-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
